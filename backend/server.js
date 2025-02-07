@@ -7,7 +7,10 @@ const cors = require('cors')
 const app = express()
 app.use(express.json());
 connectToDB()
-app.use(cors());
+app.use(cors({
+    origin: "https://mern-formdata-1-backend.onrender.com", 
+    credentials: true,
+}));
 
 app.use('/api/user', userRoutes)
 
