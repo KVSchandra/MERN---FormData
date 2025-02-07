@@ -16,7 +16,7 @@ const Create = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("https://mern-formdata-1-backend.onrender.com/api/user/", {
+            const response = await fetch("https://mern-formdata-1-backend.onrender.com/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
