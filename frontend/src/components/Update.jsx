@@ -8,7 +8,7 @@ const Update = () => {
     const [post, setPost] = useState({ name: "", email: "", age: "" });
 
     useEffect(() => {
-        fetch(`https://mern-formdata-1-backend.onrender.com/${id}`)
+        fetch(`https://mern-formdata-1-backend.onrender.com/api/user${id}`)
             .then((res) => res.json())
             .then((data) => setPost(data.data))
             .catch((err) => console.error("Error fetching post:", err));
@@ -21,7 +21,7 @@ const Update = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`https://mern-formdata-1-backend.onrender.com/${id}`, {
+            const response = await fetch(`https://mern-formdata-1-backend.onrender.com/api/user${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(post),
