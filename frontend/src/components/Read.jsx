@@ -6,7 +6,7 @@ const Read = () => {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        fetch("https://mern-formdata-1-backend.onrender.com/")
+        fetch("https://mern-formdata-1-backend.onrender.com/api/user")
             .then((res) => res.json())
             .then((data) => {
                 console.log("Fetched posts:", data); 
@@ -20,7 +20,7 @@ const Read = () => {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(`https://mern-formdata-1-backend.onrender.com/${id}`, {
+            const response = await fetch(`https://mern-formdata-1-backend.onrender.com/api/user${id}`, {
                 method: "DELETE",
             });
 
